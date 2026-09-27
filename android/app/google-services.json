@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "529473229422",
+    "project_id": "notes-3d",
+    "storage_bucket": "notes-3d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:529473229422:android:ebc0a12e6e9b10d3a9cc7f",
+        "android_client_info": {
+          "package_name": "com.example.notes_3d"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa82xPJ4pBvYiI7OcHkp2NpVZo2fJ4PPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
