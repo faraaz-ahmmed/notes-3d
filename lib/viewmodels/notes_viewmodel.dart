@@ -35,8 +35,8 @@ class NotesViewModel extends ChangeNotifier {
     loadNotes();
   }
 
-  // Start Load Notes
-  void loadNotes() {
+  
+  void loadNotes() {                                           // Start Load Notes
     _subscription = _firebaseService.getNotes().listen(
       (notes) {
         _notes = notes;
@@ -50,18 +50,16 @@ class NotesViewModel extends ChangeNotifier {
         notifyListeners();
       },
     );
-  }
-  // End Load Notes
+  }                                                              // End Load Notes
 
-  // Start Search Notes
-  void searchNotes(String value) {
+  
+  void searchNotes(String value) {                             // Start Search Notes
     _searchText = value.trim();
     notifyListeners();
-  }
-  // End Search Notes
+  }                                                               // End Search Notes
 
-  // Start Add Note
-  Future<bool> addNote({
+ 
+  Future<bool> addNote({                                      // Start Add Note
     required String title,
     required String description,
   }) async {
@@ -84,11 +82,10 @@ class NotesViewModel extends ChangeNotifier {
       notifyListeners();
       return false;
     }
-  }
-  // End Add Note
+  }                                                           // End Add Note
 
-  // Start Update Note
-  Future<bool> updateNote({
+ 
+  Future<bool> updateNote({                                 // Start Update Note
     required String id,
     required String title,
     required String description,
@@ -113,11 +110,10 @@ class NotesViewModel extends ChangeNotifier {
       notifyListeners();
       return false;
     }
-  }
-  // End Update Note
+  }                                                       // End Update Note
 
-  // Start Pin Note
-  Future<void> togglePin(NoteModel note) async {
+  
+  Future<void> togglePin(NoteModel note) async {         // Start Pin Note
     try {
       await _firebaseService.togglePin(
         id: note.id,
@@ -129,11 +125,10 @@ class NotesViewModel extends ChangeNotifier {
       _error = 'Unable to pin note';
       notifyListeners();
     }
-  }
-  // End Pin Note
+  }                                                      // End Pin Note
 
-  // Start Delete Note
-  Future<void> deleteNote(String id) async {
+  
+  Future<void> deleteNote(String id) async {             // Start Delete Note
     try {
       await _firebaseService.deleteNote(id);
       _error = null;
@@ -141,14 +136,12 @@ class NotesViewModel extends ChangeNotifier {
       _error = 'Unable to delete note';
       notifyListeners();
     }
-  }
-  // End Delete Note
+  }                                                      // End Delete Note
 
-  // Start Dispose
-  @override
+  
+  @override                                            // Start Dispose
   void dispose() {
     _subscription?.cancel();
     super.dispose();
-  }
-  // End Dispose
+  }                                                 // End Dispose
 }
