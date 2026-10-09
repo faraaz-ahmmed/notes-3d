@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     // Start Timer
-    timer = Timer(const Duration(seconds: 2), () {
+    timer = Timer(const Duration(seconds: 4), () {
       if (!mounted) return;
 
       Navigator.pushReplacement(
